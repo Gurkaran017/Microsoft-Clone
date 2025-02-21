@@ -20,37 +20,43 @@ import pink2 from "../assets/Images/pink2.jpg";
 import Footer from "./Footer";
 
 const Bottom = () => {
-  const [img , setImg] = useState(PinkImage)
+  const [img, setImg] = useState(PinkImage);
   const [wid, setwid] = useState(window.innerHeight <= 830 ? 53 : 43);
   const [mar, setmar] = useState(window.innerHeight <= 830 ? 60 : 50);
+  console.log("mar", mar);
+  console.log("wid", wid);
 
   useEffect(() => {
-      const updateSlides = () => {
-        setImg(window.innerWidth <= 768 ? pink2 : PinkImage);
-      };
-  
-      updateSlides();
-      window.addEventListener("resize", updateSlides);
-      return () => window.removeEventListener("resize", updateSlides);
-    }, []);
+    const updateSlides = () => {
+      setImg(window.innerWidth <= 768 ? pink2 : PinkImage);
+    };
 
-    useEffect(() => {
-      const updatewidght = () => {
-        setwid(window.innerHeight <= 830 ? 53 : 43);
-      };
-  
-      window.addEventListener("resize", updatewidght);
-      return () => window.removeEventListener("resize", updatewidght);
-    }, []);
+    updateSlides();
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
 
-    useEffect(() => {
-      const updatewidght = () => {
-        setmar(window.innerHeight <= 830 ? 60 : 50);
-      };
-  
-      window.addEventListener("resize", updatewidght);
-      return () => window.removeEventListener("resize", updatewidght);
-    }, []);
+  useEffect(() => {
+    const updatewidght = () => {
+      setwid(window.innerHeight <= 830 ? 53 : 43);
+    };
+
+    updatewidght(); // Set initial value
+
+    window.addEventListener("resize", updatewidght);
+    return () => window.removeEventListener("resize", updatewidght);
+  }, []); // No dependency array change needed
+
+  useEffect(() => {
+    const updatemar = () => {
+      setmar(window.innerHeight <= 830 ? 60 : 50);
+    };
+
+    updatemar(); // Set initial value
+
+    window.addEventListener("resize", updatemar);
+    return () => window.removeEventListener("resize", updatemar);
+  }, []); // No dependency array change needed
 
   const item1 = [
     {
@@ -142,8 +148,18 @@ const Bottom = () => {
         </div>
         <Cards items={item1} wid={wid} />
         <div className="relative flex lg:m-16 lg:mt-24 mt-12 mb-[25vh] items-center justify-center lg:justify-normal cursor-pointer">
-          <img className={`w-[${wid}vh] lg:w-full`} src={img} />
-          <div className={`absolute lg:w-80 w-[${wid}vh] space-y-4 lg:m-32 mt-[${mar}vh]`}>
+          <img
+            className="lg:w-full"
+            src={img}
+            style={{ width: window.innerWidth >= 1024 ? "100%" : `${wid}vh` }}
+          />
+          <div
+            className="absolute lg:w-80 space-y-4 lg:m-32"
+            style={{
+              width: window.innerWidth >= 1024 ? "20rem" : `${wid}vh`,
+              marginTop: `${mar}vh`,
+            }}
+          >
             <h1 className="lg:text-3xl text-2xl font-semibold">
               Copilot is your AI companion
             </h1>
@@ -157,8 +173,10 @@ const Bottom = () => {
           </div>
         </div>
         <div>
-          <h1 className="lg:text-3xl text-2xl font-semibold lg:ml-16 ml-3 mt-52 lg:mb-0" >For business</h1>
-          <Cards items={item2}  wid={wid} />
+          <h1 className="lg:text-3xl text-2xl font-semibold lg:ml-16 ml-3 mt-52 lg:mb-0">
+            For business
+          </h1>
+          <Cards items={item2} wid={wid} />
         </div>
         <div className="lg:m-20 my-20 ml-7 flex space-x-6 items-center">
           <h1 className="text-base">Follow Microsoft</h1>
