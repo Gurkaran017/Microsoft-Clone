@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SurfacePRO from "../assets/Images/Surfacepro2nd.avif";
 
-const Cards = ({ items, wid }) => {
+const Cards = ({ items }) => {
+
+  const [wid, setwid] = useState(window.innerHeight <= 830 ? 53 : 43);
+   useEffect(() => {
+      const updatewidght = () => {
+        setwid(window.innerHeight <= 830 ? 53 : 43);
+      };
+  
+      updatewidght(); // Set initial value
+  
+      window.addEventListener("resize", updatewidght);
+      return () => window.removeEventListener("resize", updatewidght);
+    }, []); // No dependency array change needed
+
+  console.log("cards wid" , wid )
   return (
     <div className="flex flex-wrap justify-center lg:gap-6 gap-9 mt-10">
       {items.map((item, index) => (
         <div
           key={index}
           className="lg:w-72 bg-white shadow-lg overflow-hidden flex flex-col relative cursor-pointer"
-          style={{ width: window.innerWidth >= 1024 ? "18rem" : `${wid}vh` }}
+          style={{ width: window.innerWidth >= 1024 ? "18rem" : `43vh` }}  // `${wid}vh
         >
           {/* Image */}
           <img
