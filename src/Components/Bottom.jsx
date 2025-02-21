@@ -151,12 +151,12 @@ const Bottom = () => {
           <img
             className="lg:w-full"
             src={img}
-            style={{ width: window.innerWidth >= 1024 ? "100%" : `43vh` }}
+            style={{ width: window.innerWidth >= 1024 ? "100%" : `50vh` }}
           />
           <div
             className="absolute lg:w-80 space-y-4 lg:m-32"
             style={{
-              width: window.innerWidth >= 1024 ? "20rem" : `43vh`,
+              width: window.innerWidth >= 1024 ? "20rem" : `50vh`,
               marginTop: `${mar}vh`,
             }}
           >
@@ -173,7 +173,7 @@ const Bottom = () => {
           </div>
         </div>
         <div>
-          <h1 className="lg:text-3xl text-2xl font-semibold lg:ml-16 ml-3 mt-52 lg:mb-0">
+          <h1 className="lg:text-3xl text-2xl font-semibold lg:ml-16 ml-4 mt-52 lg:mb-0">
             For business
           </h1>
           <Cards items={item2}  />

@@ -22,7 +22,7 @@ const Cards = ({ items }) => {
         <div
           key={index}
           className="lg:w-72 bg-white shadow-lg overflow-hidden flex flex-col relative cursor-pointer"
-          style={{ width: window.innerWidth >= 1024 ? "18rem" : `43vh` }}  // `${wid}vh
+          style={{ width: window.innerWidth >= 1024 ? "18rem" : `50vh` }}  // `${wid}vh
         >
           {/* Image */}
           <img
