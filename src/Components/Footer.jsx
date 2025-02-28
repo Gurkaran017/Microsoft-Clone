@@ -103,7 +103,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="lg:flex justify-between list-none text-gray-500 text-xs lg:mx-16 space-y-4 lg:space-y-0 ml-9 mt-12 items-center">
+      <div className="lg:flex justify-between list-none text-gray-500 text-[11px] lg:mx-16 space-y-4 lg:space-y-0 ml-9 mt-12 items-center">
         <div className="lg:flex lg:space-x-5 space-y-2 lg:space-y-0 items-center">
           <li className="hover:underline cursor-pointer flex items-center"><BsGlobeAmericas className="mr-2 text-lg" />English (India)</li>
           <li className="hover:underline cursor-pointer">Your Privacy Choices</li>

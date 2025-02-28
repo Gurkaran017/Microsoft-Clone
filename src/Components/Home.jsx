@@ -27,7 +27,8 @@ function Home() {
   };
   return (
     <>
-        <div className="overflow-x-hidden ">
+        <div className=" ">
+        {/* <div className="overflow-x-hidden "> */}
           <div>
             {isVisible && (
               <button

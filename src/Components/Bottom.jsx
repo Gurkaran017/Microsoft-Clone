@@ -149,15 +149,15 @@ const Bottom = () => {
         <Cards items={item1}  />
         <div className="relative flex lg:m-16 lg:mt-24 mt-12 mb-[25vh] items-center justify-center lg:justify-normal cursor-pointer">
           <img
-            className="lg:w-full"
+            className="lg:w-full w-[93vw] lg:m-0 m-auto"
             src={img}
-            style={{ width: window.innerWidth >= 1024 ? "100%" : `50vh` }}
+            // style={{ width: window.innerWidth >= 1024 ? "100%" : `50vh` }}
           />
           <div
-            className="absolute lg:w-80 space-y-4 lg:m-32"
+            className="absolute lg:w-80 mt-[55vh] lg:mt-[20vh]  w-[93vw] m-auto space-y-4 lg:m-32"
             style={{
-              width: window.innerWidth >= 1024 ? "20rem" : `50vh`,
-              marginTop: `${mar}vh`,
+              // width: window.innerWidth >= 1024 ? "20rem" : `50vh`,
+              // marginTop: `60vh`,
             }}
           >
             <h1 className="lg:text-3xl text-2xl font-semibold">
@@ -173,7 +173,7 @@ const Bottom = () => {
           </div>
         </div>
         <div>
-          <h1 className="lg:text-3xl text-2xl font-semibold lg:ml-16 ml-4 mt-52 lg:mb-0">
+          <h1 className="lg:text-3xl text-2xl font-semibold lg:ml-16 ml-4  lg:mb-0">
             For business
           </h1>
           <Cards items={item2}  />
